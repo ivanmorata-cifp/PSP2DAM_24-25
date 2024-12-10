@@ -1,4 +1,4 @@
-package Tema3.EjerciciosPrueba;
+package Tema3.Ejercicios2_3;
 
 import java.io.IOException;
 import java.io.InputStream;
