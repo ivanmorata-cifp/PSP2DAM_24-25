@@ -6,12 +6,9 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Ejercicio10 {
-    public static void main(String[] args) {
+
+    public static void ejecutaMetodo(String comando, String directorio){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Por favor, introduce un comando del sistema operativo: ");
-        String comando = scanner.nextLine();
-        System.out.print("Ahora, especifica el directorio de ejecución: ");
-        String directorio = scanner.nextLine();
         try {
             ProcessBuilder processBuilder = new ProcessBuilder();
             File dir = new File(directorio);
@@ -37,5 +34,9 @@ public class Ejercicio10 {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        ejecutaMetodo(args[0], args[1]);
     }
 }

@@ -8,21 +8,12 @@ public class Ejercicio9 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Por favor, introduce un comando del sistema operativo: ");
-        String comando = scanner.nextLine();
+        String comando = scanner.nextLine(); //"ping -c 4 google.com"
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder();
-            processBuilder.command(comando.split(" "));
+            String [] comandoSeparado = comando.split(" "); //[0]"ping", [1]"-c", [2]"4", [3]"google.com"
+            ProcessBuilder processBuilder = new ProcessBuilder(comandoSeparado);
+            processBuilder.inheritIO();
             Process proceso = processBuilder.start();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
-            String linea;
-            System.out.println("Salida del comando:");
-            while ((linea = reader.readLine()) != null) {
-                System.out.println(linea);
-            }
-            BufferedReader errorReader = new BufferedReader(new InputStreamReader(proceso.getErrorStream()));
-            while ((linea = errorReader.readLine()) != null) {
-                System.err.println(linea);
-            }
             int exitCode = proceso.waitFor();
             System.out.println("\nEl comando finalizó con el código de salida: " + exitCode);
         } catch (Exception e) {
