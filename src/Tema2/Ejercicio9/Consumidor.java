@@ -2,9 +2,9 @@ package Tema2.Ejercicio9;
 
 class Consumidor implements Runnable {
 
-    private Monitor bandeja ;
+    private NumeroCompartido bandeja ;
 
-    public Consumidor(Monitor s){
+    public Consumidor(NumeroCompartido s){
         bandeja = s ;
     }
 

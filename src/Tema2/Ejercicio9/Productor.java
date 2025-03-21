@@ -1,9 +1,9 @@
 package Tema2.Ejercicio9;
 
 class Productor implements Runnable {
-    private Monitor bandeja;
+    private NumeroCompartido bandeja;
 
-    public Productor (Monitor s) {
+    public Productor (NumeroCompartido s) {
         bandeja = s;
     }
 

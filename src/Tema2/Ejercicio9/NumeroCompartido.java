@@ -1,9 +1,10 @@
 package Tema2.Ejercicio9;
 
-class Monitor {
+class NumeroCompartido {
 
     private int numero = 0 ;
     private boolean cerrojo = false;
+
     void Monitor(){
         numero = 0;
     }
@@ -29,8 +30,8 @@ class Monitor {
                 System.err.println(e.toString());
             }
         }
+        numero = num;
         cerrojo = true;
         notifyAll();
-        numero = num;
     }
 }
